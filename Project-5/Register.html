@@ -1,0 +1,94 @@
+<html>
+    <head>
+        <script>
+            function validation()
+             {
+            if (isEmpty(document.getElementById('sname').value.trim())) {
+            alert('First name is required!');
+            return false;
+            }
+
+            if (isEmpty(document.getElementById('rollno').value.trim())) {
+            alert('rollno is required!');
+            return false;
+            }
+
+            if (isEmpty(document.getElementById('email').value.trim())) {
+            alert('email is required!');
+            return false;
+            }
+
+            if (isEmpty(document.getElementById('datebirth').value.trim())) {
+            alert('datebirth is required!');
+            return false;
+            }
+
+            if (!validateEmail(document.getElementById('datejoining').value.trim())) {
+            alert('datejoining is required ');
+            return false;
+            }
+
+            if (isEmpty(document.getElementById('year').value.trim())) {
+            alert('year is required!');
+            return false;
+            }
+
+            if (isEmpty(document.getElementById('address').value.trim())) {
+            alert('address is required!');
+            return false;
+            }
+
+            if (isEmpty(document.getElementById('pass').value.trim())) {
+            alert('create password is required!');
+            return false;
+            }
+            if (!validateEmail(document.getElementById('passed').value.trim())) {
+            alert('confirm password is required');
+            return false;
+            }
+             return true;
+            }
+            function isEmpty(str) { return (str.length === 0 || !str.trim()); }
+            function validateEmail(email) {
+            var re = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,15}(?:\.[a-z]{2})?)$/i;
+            return isEmpty(email) || re.test(email);
+            }
+        </script>
+        <title>Registration</title>
+    <style>
+        body{background-color: rgb(133, 55, 206); color:rgb(163, 67, 67)}
+    </style>
+    <body>
+        <body background="C:\Users\hp\Desktop\UI Development\1-HTML\img7.jpg"></body>
+        <div>
+            <from align="left" target="blank" action="Loginpage.html" onsubmit="return validation()">
+            <center><h1> Registration form</h1></center>
+            <center>Name:<br><input type="text" id="sname" name="sname" placeholder="Name" autofocus></center>
+            <center>Roll no:<br><input type="text" id="rollno "name="rollno" placeholder="roll number"></center>
+            <center>email id:<br><input type="text" id="email" name="email" placeholder="email id"><br><br></center>
+            <center>Gender:<input type="radio" id="gender" name="gender" value="male">Male
+            <input type="radio" id="gender" name="gender" value="Female">Female<br><br></center>
+            <center>Date of Birth:<input type="date" id="datebirth" name="datebirth"><br><br></center>
+            <center>Date of joining:<input type="date" id="datejoining" name="datejoining"><br><br></center>
+            
+            <center>Year:<br><select id="year" name="year"><br>
+                <option value="I">I</option>
+                <option value="II">II</option>
+                <option value="III">III</option>
+                <option value="IV">IV</option>
+                </select><br><br></center>
+            <center>Course:
+            <br><input type="checkbox" id="c" name="c">C
+            <input type="checkbox" id="python" name="python">Python<br>
+            <input type="checkbox" id="java" name="java">Java<br><br></center>
+            <center>Address:<textarea id="address" name="address" cols="25"placeholder="password">
+            </textarea><br><br></center>
+        <center>Create Password:<br><input type="password" id="pass" name="pass" placeholder="Create password"><br></center>
+        <center>Confirm Password:<br><input type="password" id="passed" name="passed" placeholder="Confirm password"><br><br></center>
+        <center><input type="submit">
+        <button type="reset">Reset</button></center>
+            </from>
+        </div>
+    </body>
+   </head>
+</html>
